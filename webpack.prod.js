@@ -18,9 +18,9 @@ module.exports = {
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                } 
+                use: [
+                    'babel-loader'
+                ] 
             },
             {
                 test:/\.css$/,
@@ -45,7 +45,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.(svg|png|jpg|gif)$/,
+                test: /\.(svg|png|jpg|gif)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -70,7 +70,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                {from: 'src/assets',to:'assets/'}
+                {from: 'src/assets',to: 'assets/'}
             ]}
         ),
         new MinifyPlugin(),

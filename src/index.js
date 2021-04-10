@@ -1,6 +1,11 @@
-import {saludar} from './js/componentes'; // Esta es la maenra de importat archivos
 import './styles.css';
 
-const nombre = "Armand";
+import { Todo, TodoList} from './classes/index.js';
+import { crearTodoHtml } from './js/componentes';
 
-saludar(nombre);
+
+export const todoList = new TodoList();
+
+todoList.todos.forEach(todo => crearTodoHtml(todo));
+
+console.log('todos',todoList.todos);
